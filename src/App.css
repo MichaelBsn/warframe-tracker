@@ -1,0 +1,26 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.App .quick {
+  border: 2px solid black;
+}
+.App .nightwave {
+  border: 2px solid black;
+}
+.App .fissures-container {
+  display: flex;
+  border: 2px solid black;
+}
+.App .fissures-list {
+  padding: 5px;
+}
+.App #hard-fissures {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+
+/*# sourceMappingURL=App.css.map */
