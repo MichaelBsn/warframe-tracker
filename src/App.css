@@ -1,26 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #10002B;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  margin: 10px 0 10px;
+}
+
+h2 {
+  margin: 10px 0 5px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 300px;
+}
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+table {
+  background-color: #E0AAFF;
+  color: #10002B;
+  border-radius: 5px;
+  margin: 20px 5px 20px;
+}
+table thead {
+  background-color: #C77DFF;
+  border-bottom: 2px solid #10002B;
+}
+table td {
+  padding: 5px;
+}
+
 .App {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  max-width: 800px;
 }
-
 .App .quick {
-  border: 2px solid black;
-}
-.App .nightwave {
-  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .App .fissures-container {
   display: flex;
-  border: 2px solid black;
+  flex-direction: column;
+}
+@media (min-width: 600px) {
+  .App .fissures-container {
+    flex-direction: row;
+  }
 }
 .App .fissures-list {
   padding: 5px;
-}
-.App #hard-fissures {
-  border-left: 2px solid black;
-  border-right: 2px solid black;
 }
 
 /*# sourceMappingURL=App.css.map */

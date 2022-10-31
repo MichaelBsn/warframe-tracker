@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import VoidFissures from './components/VoidFissures';
 import Nightwave from './components/Nightwave'
 import QuickInfo from './components/QuickInfo';
+import { Link, Route, Routes } from "react-router-dom"
 
 
 
@@ -17,17 +18,19 @@ function App() {
       .then((data) => setApiData(data));
   }, [])
 
-  function handleLog() {
-    console.log(apiData)
-  }
-
   return (
     <div className="App">
       <h1>Warframe Worldstate Monitor</h1>
-      {apiData && <QuickInfo data={apiData} />}
-      {apiData && <VoidFissures data={apiData} />}
-      {apiData && <Nightwave data={apiData} />}
-      <button onClick={handleLog}>Logger</button>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/fissures">Void Fissures</Link>
+        <Link to="/nightwave">Nightwave</Link>
+      </nav>
+      <Routes>
+        <Route path='/' element={apiData && <QuickInfo data={apiData} />} />
+        <Route path='/fissures' element={apiData && <VoidFissures data={apiData} />} />
+        <Route path='/nightwave' element={apiData && <Nightwave data={apiData} />} />
+      </Routes>
     </div>
   );
 }

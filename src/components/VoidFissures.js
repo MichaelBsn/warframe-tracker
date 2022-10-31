@@ -6,31 +6,71 @@ const VoidFissures = ({ data }) => {
     const stormFissures = data.fissures.filter(fissure => fissure.isStorm === true)
 
     const mappedNormal = normalFissures.map(fissure => (
-        <p key={fissure.id}>{fissure.tier} - {fissure.missionType} - {fissure.enemy}</p>
+        <tr key={fissure.id}>
+            <td>{fissure.tier}</td>
+            <td>{fissure.missionType}</td>
+            <td>{fissure.enemy}</td>
+        </tr>
     ))
     const mappedHard = hardFissures.map(fissure => (
-        <p key={fissure.id}>{fissure.tier} - {fissure.missionType} - {fissure.enemy}</p>
+        <tr key={fissure.id}>
+            <td>{fissure.tier}</td>
+            <td>{fissure.missionType}</td>
+            <td>{fissure.enemy}</td>
+        </tr>
     ))
     const mappedStorm = stormFissures.map(fissure => (
-        <p key={fissure.id}>{fissure.tier} - {fissure.missionType} - {fissure.enemy}</p>
+        <tr key={fissure.id}>
+            <td>{fissure.tier}</td>
+            <td>{fissure.missionType}</td>
+            <td>{fissure.enemy}</td>
+        </tr>
     ))
 
     return (
         <div className='fissures'>
             <h2>Void Fissures</h2>
             <div className='fissures-container'>
-                <div className='fissures-list'>
-                    <h3>Normal fissures</h3>
-                    {mappedNormal}
-                </div>
-                <div className='fissures-list' id='hard-fissures'>
-                    <h3>Hard fissures</h3>
-                    {mappedHard}
-                </div>
-                <div className='fissures-list'>
-                    <h3>Storm fissures</h3>
-                    {mappedStorm}
-                </div>
+                <table className='fissures-list'>
+                    <thead>
+                        <tr><th colSpan={3}>Normal Fissures</th></tr>
+                        <tr>
+                            <th>Tier</th>
+                            <th>Mission</th>
+                            <th>Enemy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {mappedNormal}
+                    </tbody>
+                </table>
+                <table className='fissures-list' id='hard-fissures'>
+                    <thead>
+                        <tr><th colSpan={3}>Steel Path Fissures</th></tr>
+                        <tr>
+                            <th>Tier</th>
+                            <th>Mission</th>
+                            <th>Enemy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {mappedHard}
+                    </tbody>
+                </table>
+                <table className='fissures-list'>
+                    <thead>
+                        <tr><th colSpan={3}>Void Storms</th></tr>
+                        <tr>
+                            <th>Tier</th>
+                            <th>Mission</th>
+                            <th>Enemy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {mappedStorm}
+                    </tbody>
+                </table>
             </div>
         </div>
     )
